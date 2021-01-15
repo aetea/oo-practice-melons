@@ -5,25 +5,43 @@
 
 class MelonType(object):
     """A species of melon at a melon farm."""
+    ## creating attributes for this class
+    # code = None
+    # first_harvest = 0
 
     def __init__(self, code, first_harvest, color, is_seedless, is_bestseller, 
                  name):
         """Initialize a melon."""
 
+        self.name = name
+        self.code = code
+        self.first_harvest = first_harvest
+        self.color = color
+        self.is_seedless = is_seedless
+        self.is_bestseller = is_bestseller
+
         self.pairings = []
 
         # Fill in the rest
+
+    def __repr__(self):
+        return f'this melon is called {self.name} with the code {self.code}.'
+        # print(f'first harvest is {self.first_harvest} and bestseller is {self.is_bestseller}')
+        # print(f'it is {self.color}, seedless {self.is_seedless} and pairs well with:')
+        # print(f'{self.pairings}')
 
     def add_pairing(self, pairing):
         """Add a food pairing to the instance's pairings list."""
 
         # Fill in the rest
+        self.pairings.append(pairing)
+
 
     def update_code(self, new_code):
         """Replace the reporting code with the new_code."""
 
         # Fill in the rest
-
+        self.code = new_code
 
 def make_melon_types():
     """Returns a list of current melon types."""
